@@ -1,21 +1,21 @@
-package com.example.demo;
+package com.example.demo.employee;
 
-import com.example.demo.model.Driver;
-import com.example.demo.model.Job;
-import com.example.demo.model.Programmer;
-import com.example.demo.model.Teacher;
+import com.example.demo.SGUTS;
+import com.example.demo.company.Company;
+import com.example.demo.model.*;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 @RestController
 public class EmployeeController {
-    ArrayList<Job> joblist = new ArrayList<Job>();
+    List<Job> joblist = new ArrayList<Job>();
     EmployeeService hastag2;
+    Company company;
      public EmployeeController(EmployeeService hastag2) {
          Collections.addAll(joblist,new Driver(750,300),new Programmer(1200, 250), new Teacher(600, 200));
          this.hastag2 = hastag2;

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.employee;
 
 import com.example.demo.model.Job;
 import org.springframework.stereotype.Service;

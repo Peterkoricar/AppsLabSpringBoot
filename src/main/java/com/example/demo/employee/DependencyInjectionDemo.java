@@ -1,9 +1,6 @@
-package com.example.demo;
+package com.example.demo.employee;
 
-import com.example.demo.model.Driver;
-import com.example.demo.model.Job;
-import com.example.demo.model.Programmer;
-import com.example.demo.model.Teacher;
+import com.example.demo.model.*;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -25,6 +22,5 @@ public class DependencyInjectionDemo {
     float getSum(List<Job> jobList){
         return hastag1.totalSalary(jobList) + hastag1.totalBonus(jobList);
     }
-
 
 }
