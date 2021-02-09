@@ -1,25 +1,29 @@
 package com.example.demo.company;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.example.demo.Adress;
+
+import javax.persistence.*;
 
 @Entity
 public class Company {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name = "id")
     private int id;
     private String name;
 
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "adress", referencedColumnName = "id")
+    private Adress adress;
     public Company(){
 
     }
-    public Company(int id, String name){
+    public Company(int id, String name, Adress adress){
         this.id = id;
         this.name = name;
+        this.adress = adress;
     }
-
 
     public int getId(){
         return id;
@@ -36,5 +40,12 @@ public class Company {
         this.name = name;
     }
 
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
 
 }
