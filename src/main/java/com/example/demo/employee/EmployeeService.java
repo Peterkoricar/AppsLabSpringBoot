@@ -1,10 +1,10 @@
 package com.example.demo.employee;
 
-import com.example.demo.model.Job;
-import org.springframework.stereotype.Service;
+import com.example.demo.model.Employee;
 
 import java.util.List;
 public interface EmployeeService {
-    float totalSalary(List<Job> list);
-    int totalBonus(List<Job> list);
+    float totalSalary(List<Employee> list);
+    int totalBonus(List<Employee> list);
+    void saveEmployee(Employee employee);
 }

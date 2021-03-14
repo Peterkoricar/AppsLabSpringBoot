@@ -2,6 +2,8 @@ package com.example.demo.company;
 
 import com.example.demo.Adress;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -13,12 +15,8 @@ public class CompanyController {
         this.companyService = companyService;
     }
 
-    @GetMapping("/company")
-    public void blabla(){
-        Adress adress = new Adress("fsdgs",32555,"fsdfsdgg", "gfsdgfdshdfh");
-        Company company = new Company();
-        company.setName("comp");
-        company.setAdress(adress);
+    @PostMapping("/postman")
+    public void postman(@RequestBody Company company){
         companyService.saveCompany(company);
     }
 

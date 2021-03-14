@@ -1,9 +1,16 @@
 package com.example.demo.model;
 
-public class Job {
+import javax.persistence.*;
+
+@Entity
+public class Employee {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private int id;
     protected float salary;
     protected int bonus;
-    protected JobType jobname;
+    @Enumerated(EnumType.ORDINAL)
+    private JobType jobname;
 
     public float getSalary() {
         return salary;
@@ -13,7 +20,7 @@ public class Job {
         return bonus;
     }
 
-    public Job(float salary, int bonus, JobType jobname) {
+    public Employee(float salary, int bonus, JobType jobname) {
         this.salary = salary;
         this.bonus = bonus;
         this.jobname = jobname;
